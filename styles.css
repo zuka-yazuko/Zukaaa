@@ -1,0 +1,93 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: white;
+  color: pink;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  overflow: hidden; /* Biar love yang keluar ga keliatan */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.message {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 20px;
+  border: 2px solid pink;
+  border-radius: 10px;
+  background: rgba(255, 182, 193, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+.buttons {
+  margin-top: 20px;
+}
+
+.btn {
+  background: pink;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: hotpink;
+}
+
+/* Animasi Love */
+.heart {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  background: pink;
+  transform: rotate(-45deg);
+  animation: floatUp 4s linear infinite;
+  opacity: 0.7;
+}
+
+.heart::before,
+.heart::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: pink;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -10px;
+  left: 0;
+}
+
+.heart::after {
+  left: 10px;
+  top: 0;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) rotate(-45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) rotate(-45deg);
+    opacity: 0;
+  }
+}
