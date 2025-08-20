@@ -1,93 +1,59 @@
-body {
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background: white;
-  color: pink;
-  font-family: Arial, sans-serif;
-  text-align: center;
-  overflow: hidden; /* Biar love yang keluar ga keliatan */
+  background-color: #FFC568;
+  font-size: 62.5%;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 50rem;
+  height: 20rem;
   position: relative;
+}
+
+.svg-container {
   z-index: 2;
-}
-
-.message {
-  font-size: 20px;
-  font-weight: bold;
-  padding: 20px;
-  border: 2px solid pink;
-  border-radius: 10px;
-  background: rgba(255, 182, 193, 0.2);
-  transition: all 0.3s ease-in-out;
-}
-
-.buttons {
-  margin-top: 20px;
-}
-
-.btn {
-  background: pink;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  margin: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: 0.3s;
-}
-
-.btn:hover {
-  background: hotpink;
-}
-
-/* Animasi Love */
-.heart {
   position: absolute;
-  bottom: -10px;
-  left: 50%;
-  width: 20px;
-  height: 20px;
-  background: pink;
-  transform: rotate(-45deg);
-  animation: floatUp 4s linear infinite;
-  opacity: 0.7;
 }
 
-.heart::before,
-.heart::after {
-  content: '';
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background: pink;
-  border-radius: 50%;
+.mo-container {
+  width: 100%;
+  height: 100%;
 }
 
-.heart::before {
-  top: -10px;
-  left: 0;
+.line {
+  fill: none;
+  stroke: #FFFFFF;
+  stroke-width: 8;
+  stroke-linecap: round;
+  stroke-miterlimit: 10;
 }
 
-.heart::after {
-  left: 10px;
-  top: 0;
+.lttr {
+  fill: #763C8C;
 }
 
-@keyframes floatUp {
-  0% {
-    transform: translateY(0) rotate(-45deg);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-100vh) rotate(-45deg);
-    opacity: 0;
-  }
+.sound {
+  position: fixed;
+  color: #763C8C;
+  font-size: 1.6rem;
+  bottom: 1rem;
+  right: 1rem;
+  text-decoration: underline;
+  cursor: default;
+}
+
+.sound--off {
+  text-decoration: line-through;
 }
