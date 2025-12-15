@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Code Gallery | RPL 1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">RPL 1</div>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="data siswa.html">Data Siswa</a></li>
+        <li><a href="code.html" class="active">Code</a></li>
+        <li><a href="logout.html">Logout</a></li>
+    </ul>
+</nav>
+
+<header class="hero small">
+    <h1>Code Gallery</h1>
+    <p>Kumpulan hasil coding siswa RPL 1</p>
+</header>
+
+<main class="content">
+
+    <!-- TAB BUTTON -->
+    <div class="code-tabs">
+        <button class="tab active" onclick="openTab('html')">HTML</button>
+        <button class="tab" onclick="openTab('php')">PHP</button>
+        <button class="tab" onclick="openTab('python')">Python</button>
+    </div>
+
+    <!-- HTML -->
+    <div class="code-box active" id="html">
+        <div class="code-header">
+            <span>HTML - Landing Page</span>
+            <button onclick="copyCode('htmlCode')">Copy</button>
+        </div>
+<pre id="htmlCode"><code>
+&lt;h1&gt;Welcome to RPL 1&lt;/h1&gt;
+&lt;p&gt;Belajar web itu seru&lt;/p&gt;
+</code></pre>
+    </div>
+
+    <!-- PHP -->
+    <div class="code-box" id="php">
+        <div class="code-header">
+            <span>PHP - Koneksi Database</span>
+            <button onclick="copyCode('phpCode')">Copy</button>
+        </div>
+<pre id="phpCode"><code>
+&lt;?php
+$conn = mysqli_connect("localhost","root","","rpl");
+if(!$conn){
+    echo "Koneksi gagal";
+}
+?&gt;
+</code></pre>
+    </div>
+
+    <!-- PYTHON -->
+    <div class="code-box" id="python">
+        <div class="code-header">
+            <span>Python - Program Sederhana</span>
+            <button onclick="copyCode('pyCode')">Copy</button>
+        </div>
+<pre id="pyCode"><code>
+nama = input("Masukkan nama: ")
+print("Halo", nama)
+</code></pre>
+    </div>
+
+</main>
+
+<footer class="footer">
+    © 2025 RPL 1
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
